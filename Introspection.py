@@ -7,9 +7,6 @@ def introspection_info(obj):
             info['attributes'].append(attr)
     return info
 
+
 number_info = introspection_info(42)
 print(number_info)
-
-
-
-
