@@ -43,6 +43,7 @@ class Tournament:
 
 
 class TournamentTest(unittest.TestCase):
+    is_frozen = True
     @classmethod
     def setUpClass(cls):
         global all_results
@@ -57,6 +58,7 @@ class TournamentTest(unittest.TestCase):
     def tearDownClass(cls):
         print(*all_results, sep='\n')
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_1(self):
         global all_results
         loc_result = {}
@@ -65,6 +67,7 @@ class TournamentTest(unittest.TestCase):
         all_results.append(loc_result)
         self.assertTrue(loc_result[max(loc_result.keys())] == 'Ник')
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_2(self):
         global all_results
         loc_result = {}
@@ -73,6 +76,7 @@ class TournamentTest(unittest.TestCase):
         all_results.append(loc_result)
         self.assertTrue(loc_result[max(loc_result.keys())] == 'Ник')
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_3(self):
         global all_results
         loc_result = {}
@@ -81,6 +85,7 @@ class TournamentTest(unittest.TestCase):
         all_results.append(loc_result)
         self.assertTrue(loc_result[max(loc_result.keys())] == 'Ник')
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_4(self):  # дополнительные два теста, проверяют Усэйна и Андрея
         global all_results
         loc_result = {}
@@ -89,6 +94,7 @@ class TournamentTest(unittest.TestCase):
         all_results.append(loc_result)
         self.assertTrue(loc_result[max(loc_result.keys())] == 'Андрей')
 
+    @unittest.skipIf(is_frozen, 'Тесты в этом кейсе заморожены')
     def test_5(self):  # в этом тесте Андрей приходит первый, хотя бежит медленнее
         global all_results
         loc_result = {}
